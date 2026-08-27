@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GRIT 2026</title>
+  <meta name="description" content="GRIT: Generative Information Retrieval in the Wild — Foundations and Real-World Readiness. A SIGIR-AP 2026 Workshop."/>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <nav class="nav" aria-label="Primary">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">
+        <span class="brand-mark">GRIT</span>
+        <span class="brand-sub">SIGIR-AP 2026</span>
+      </a>
+
+      <!-- Desktop menu -->
+      <div class="menu" aria-label="Desktop Menu">
+        <a href="#overview">Overview</a>
+        <a href="#call-for-papers">Call for Papers</a>
+        <a href="#dates">Important Dates</a>
+        <a href="#team">Organizers</a>
+      </div>
+
+      <!-- Mobile toggle -->
+      <button id="navToggle" class="nav-toggle" type="button" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+        <span class="bars" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+    <div class="mm-overlay" data-close="1"></div>
+    <div class="mm-panel" role="dialog" aria-modal="true" aria-label="Menu">
+      <div class="mm-head">
+        <div class="mm-title">Menu</div>
+        <button class="mm-close" type="button" aria-label="Close menu" data-close="1">✕</button>
+      </div>
+      <div class="mm-links">
+        <a class="mm-link" href="#overview" data-close="1">Overview</a>
+        <a class="mm-link" href="#call-for-papers" data-close="1">Call for Papers</a>
+        <a class="mm-link" href="#dates" data-close="1">Important Dates</a>
+        <a class="mm-link" href="#team" data-close="1">Organizers</a>
+      </div>
+    </div>
+  </div>
+
+  <header id="top" class="hero">
+    <div class="container wrap">
+      <span class="badge">SIGIR-AP 2026 Workshop</span>
+      <h1>GRIT: Generative Information Retrieval in the Wild</h1>
+      <p class="subtitle">Foundations and Real-World Readiness</p>
+      <div class="hero-meta">
+        <span class="hero-meta-item"><span class="hero-meta-icon" aria-hidden="true">&#128197;</span> December 13&ndash;15, 2026</span>
+        <span class="hero-meta-item"><span class="hero-meta-icon" aria-hidden="true">&#128205;</span> Singapore</span>
+        <span class="hero-meta-item"><span class="hero-meta-icon" aria-hidden="true">&#128279;</span> Co-located with SIGIR-AP 2026</span>
+      </div>
+      <div class="cta">
+        <a class="cta-btn primary" href="https://easychair.org/conferences/?conf=gritsigirap2026" target="_blank" rel="noreferrer">Submit Paper</a>
+        <a class="cta-btn" href="#overview">Learn More</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="content">
+    <section id="overview">
+      <div class="container">
+        <h2 class="section-title">Overview</h2>
+        <p>
+          Generative information retrieval (GenIR) reformulates retrieval as a sequence generation task: a model
+          encodes information about a target collection into its parameters and performs retrieval by directly
+          generating identifiers of relevant targets. First studied mainly in document retrieval, the same
+          retrieval-by-generation mechanism has since been extended to generative recommendation, multimodal and
+          cross-modal retrieval, code retrieval, and entity retrieval.
+        </p>
+        <p>
+          Despite rapid progress, much of the field remains centered on accuracy over static benchmarks, typically
+          measured by Recall, MRR, or nDCG. These metrics are necessary but do not fully capture whether GenIR
+          systems are understandable, reliable, scalable, and adaptable enough for real-world use. What information
+          is actually encoded in model parameters? How stable, interpretable, and updateable are target identifiers?
+          How do these systems behave under dynamic collections, cold-start targets, distribution shifts, or deletion
+          requests? And how do their training, indexing, updating, serving, and energy costs compare with sparse,
+          dense, and hybrid retrieval infrastructures?
+        </p>
+        <p>
+          <strong>GRIT</strong> (Generative Information Retrieval in the Wild) provides a focused forum for studying
+          the real-world readiness of GenIR. Rather than treating the area only as a competition for higher benchmark
+          accuracy, the workshop brings together work on foundations and probing, reliability and robustness,
+          resilience and continual adaptation, scalability and efficiency, evaluation beyond relevance, and
+          deployment experience. Through invited talks, lightning presentations, experience reports, posters,
+          panels, and breakout discussions, GRIT will develop a shared research agenda for making GenIR systems
+          understandable, dependable, adaptable, and viable in real-world retrieval, recommendation, and multimodal
+          search settings.
+        </p>
+
+        <h3>Scope</h3>
+        <p>
+          GRIT focuses on systems where <strong>generation is the retrieval mechanism itself</strong> &mdash; in
+          scope are document and passage retrieval, evidence retrieval, entity and knowledge retrieval, generative
+          recommendation, multimodal and cross-modal retrieval, product search, and code retrieval when the target
+          is accessed through generation. The generated output may be a title, URL, entity name, evidence pointer,
+          semantic code, or another task-specific form that can be mapped back to target data.
+        </p>
+        <p>
+          Out of scope are systems that merely use generative models as auxiliary components, including query
+          expansion, summarization, answer generation, and response synthesis over retrieved documents. Typical
+          retrieval-augmented generation (RAG) pipelines are outside the core scope unless the retrieval step itself
+          is performed by generating identifiers or retrieval targets.
+        </p>
+
+        <h3>Topics of Interest</h3>
+        <p>We welcome academic, industrial, and position papers on topics including, but not limited to:</p>
+        <ul class="topic-list">
+          <li>
+            <h4>Foundations and Probing</h4>
+            <p>What information about the target collection is encoded in model parameters? How can we probe,
+              interpret, and diagnose retrieval-by-generation systems, and how do generation likelihood, relevance,
+              preference, and utility relate to each other?</p>
+          </li>
+          <li>
+            <h4>Reliability and Robustness</h4>
+            <p>How reliable are generated identifiers under noisy, ambiguous, adversarial, or out-of-distribution
+              inputs? How should systems handle invalid, duplicated, hallucinated, or poorly calibrated
+              generations?</p>
+          </li>
+          <li>
+            <h4>Resilience and Continual Adaptation</h4>
+            <p>How can GenIR systems support dynamic collections, insertions, deletions, updates, cold-start
+              targets, temporal shifts, and machine unlearning without costly retraining or catastrophic
+              forgetting?</p>
+          </li>
+          <li>
+            <h4>Scalability and Efficiency</h4>
+            <p>What are the training, indexing, updating, serving, latency, memory, throughput, and energy costs of
+              GenIR at realistic scales, compared with sparse, dense, and hybrid retrieval infrastructures?</p>
+          </li>
+          <li>
+            <h4>Evaluation Beyond Relevance</h4>
+            <p>What benchmarks, metrics, and diagnostic protocols are needed beyond accuracy? How should we evaluate
+              updateability, coverage, diversity, novelty, long-tail accessibility, fairness, privacy, robustness,
+              and user- or session-level utility?</p>
+          </li>
+          <li>
+            <h4>Deployment and Industrial Experience</h4>
+            <p>What can be learned from real deployments, system analyses, monitoring practices, hybrid
+              architectures, success stories, failure cases, and negative results involving retrieval-by-generation
+              systems?</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="call-for-papers" class="on-light-alt">
+      <div class="container">
+        <h2 class="section-title">Call for Papers</h2>
+        <p>
+          GRIT solicits short papers of <strong>up to 4 pages, including references</strong>, in the ACM two-column
+          format. Please follow the official <a href="https://www.sigir-ap.org/sigir-ap-2026/call-for-workshop-proposals/index.html" target="_blank" rel="noreferrer">SIGIR-AP 2026</a>
+          paper submission instructions. We welcome case studies, experience reports, position and vision papers,
+          open problems, preliminary ideas, research findings, system analyses, benchmarks, and negative results
+          related to the real-world readiness of retrieval-by-generation systems.
+        </p>
+
+        <div class="submit-row">
+          <a class="submit-btn" href="https://easychair.org/conferences/?conf=gritsigirap2026" target="_blank" rel="noreferrer">Submit via EasyChair &rarr;</a>
+        </div>
+
+        <h3>Review Process</h3>
+        <p>
+          We anticipate 8&ndash;15 submissions and expect to accept 5&ndash;8 papers, depending on quality and fit.
+          Each submission will receive at least two reviews from a program committee covering GenIR, IR, recommender
+          systems, multimodal retrieval, machine learning, and industrial search systems. Decisions will consider
+          relevance, clarity, technical soundness when applicable, discussion potential, and balance across workshop
+          topics. Conflicts of interest are handled by assigning submissions only to non-conflicted reviewers and
+          excluding conflicted organizers from decisions.
+        </p>
+        <p>
+          Accepted papers will be presented as lightning talks, posters, demonstrations, or breakout discussion
+          inputs.
+        </p>
+      </div>
+    </section>
+
+    <section id="dates" class="on-dark">
+      <div class="container">
+        <h2 class="section-title">Important Dates</h2>
+        <p class="dates-note">All deadlines are 11:59&nbsp;PM AoE (Anywhere on Earth) unless noted otherwise.</p>
+
+        <div class="dates-grid" aria-label="Important Dates">
+          <div class="date-card is-deadline">
+            <p class="date">September 25, 2026</p>
+            <p class="label">Submission Deadline (AoE)</p>
+          </div>
+          <div class="date-card">
+            <p class="date">October 15, 2026</p>
+            <p class="label">Notification Date</p>
+          </div>
+          <div class="date-card">
+            <p class="date">December 13&ndash;15, 2026</p>
+            <p class="label">Workshop @ SIGIR-AP 2026, Singapore</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="team">
+      <div class="container">
+        <h2 class="section-title">Organizers</h2>
+        <div class="team-grid" aria-label="Organizers">
+          <div class="team-member">
+            <div class="photo"><img src="img/yubao-tang.png" alt="Yubao Tang" /></div>
+            <h4><a href="https://yubaotang11.github.io/" target="_blank" rel="noreferrer">Yubao Tang</a></h4>
+            <p class="affil">University of Amsterdam</p>
+          </div>
+          <div class="team-member">
+            <div class="photo"><img src="img/xinyu-lin.jpeg" alt="Xinyu Lin" /></div>
+            <h4><a href="https://linxyhaha.github.io/" target="_blank" rel="noreferrer">Xinyu Lin</a></h4>
+            <p class="affil">National University of Singapore</p>
+          </div>
+          <div class="team-member">
+            <div class="photo"><img src="img/bhuvesh-kumar.jpg" alt="Bhuvesh Kumar" /></div>
+            <h4><a href="https://bhuveshkumar.com/" target="_blank" rel="noreferrer">Bhuvesh Kumar</a></h4>
+            <p class="affil">Snap Inc.</p>
+          </div>
+          <div class="team-member">
+            <div class="photo"><img src="img/maarten-de-rijke.jpeg" alt="Maarten de Rijke" /></div>
+            <h4><a href="https://staff.fnwi.uva.nl/m.derijke/" target="_blank" rel="noreferrer">Maarten de Rijke</a></h4>
+            <p class="affil">University of Amsterdam</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>SIGIR-AP 2026 Workshop &middot; December 13&ndash;15, 2026, Singapore</div>
+      <div>GRIT: Generative Information Retrieval in the Wild</div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById("navToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    function openMobileMenu(){
+      mobileMenu.classList.add("open");
+      mobileMenu.setAttribute("aria-hidden", "false");
+      navToggle.setAttribute("aria-expanded", "true");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeMobileMenu(){
+      mobileMenu.classList.remove("open");
+      mobileMenu.setAttribute("aria-hidden", "true");
+      navToggle.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+      navToggle.focus();
+    }
+
+    navToggle.addEventListener("click", ()=>{
+      const isOpen = mobileMenu.classList.contains("open");
+      if(isOpen) closeMobileMenu();
+      else openMobileMenu();
+    });
+
+    mobileMenu.addEventListener("click", (e)=>{
+      const t = e.target;
+      if(t && t.getAttribute && t.getAttribute("data-close")==="1") closeMobileMenu();
+    });
+
+    document.addEventListener("keydown", (e)=>{
+      if(e.key === "Escape" && mobileMenu.classList.contains("open")) closeMobileMenu();
+    });
+
+    window.addEventListener("resize", ()=>{
+      if(window.matchMedia("(min-width: 861px)").matches && mobileMenu.classList.contains("open")){
+        closeMobileMenu();
+      }
+    });
+  </script>
+
+  <script>
+    function updateBodyPaddingForNav(){
+      const nav = document.querySelector('.nav');
+      if(!nav) return;
+      const h = Math.ceil(nav.getBoundingClientRect().height);
+      document.body.style.paddingTop = h + 'px';
+    }
+    window.addEventListener('load', updateBodyPaddingForNav);
+    window.addEventListener('resize', updateBodyPaddingForNav);
+  </script>
+</body>
+</html>
