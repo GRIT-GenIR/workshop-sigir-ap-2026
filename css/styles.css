@@ -498,3 +498,53 @@ footer .container {
 .plain-dates strong {
   font-weight: 600;
 }
+
+
+/* Workshop Program */
+.program-table-wrapper {
+  max-width: var(--prose-w);
+  margin: 24px auto 0;
+  overflow-x: auto;
+}
+
+.program-table {
+  width: 100%;
+  min-width: 620px;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+
+.program-table th,
+.program-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.program-table th {
+  background: var(--paper);
+  font-family: var(--font-head);
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.program-table td:first-child {
+  width: 32%;
+}
+
+.program-table td:last-child {
+  white-space: nowrap;
+}
+
+.program-table .session-divider td {
+  border-top: 2px solid var(--gold);
+}
+
+@media (max-width: 760px) {
+  .program-table th,
+  .program-table td {
+    padding: 12px;
+  }
+}
