@@ -501,6 +501,10 @@ footer .container {
 
 
 /* Workshop Program */
+#program {
+  border-top: 1px solid var(--line);
+}
+
 .program-table-wrapper {
   max-width: var(--prose-w);
   margin: 24px auto 0;
@@ -530,7 +534,7 @@ footer .container {
   color: var(--ink);
 }
 
-.program-table td:first-child {
+.program-table th:first-child {
   width: 32%;
 }
 
